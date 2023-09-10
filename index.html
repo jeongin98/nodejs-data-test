@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<h1>hi</h1>
+
+<body>
+    <!-- 이곳에 html 추가 -->
+    <div class="test">
+    </div>
+
+    <!-- 데이터는 then에서 정제 -->
+    <script>
+        axios.get('/v1/members')
+            .then(function (response) {
+                console.log(response.data);
+                // let filtered = data.filter((v) => v.itemName == "성수") // 특정 조건에 해당하는 정보만 저장하기
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+        $(".test").append("<h1>추가</h1>"); // class name이 test인 곳에 html 추가
+    </script>
+
+</body>
+
+</html>
